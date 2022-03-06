@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+    <h1>추가</h1>
+    <form  th:action="@{/insertCategory}" th:object="${category}" method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>카테고리명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="categoryName" placeholder="카테고리명입력">
+                <input type="hidden" name="subCategoryId" th:value="${subCategoryId}">
+                <input type="hidden" name="categoryDiv" th:value="${categoryDiv}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="저장">
+    </form>
+    
+	<a href="/">취소</a>
+</body>
+</html>
